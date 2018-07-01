@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Firebase</title>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p class="text">Hello</p>
+    <div class="main">
+        <h2 class="heading" >All games</h2>
+        <img src="images/stdloader.gif" alt="" class="loader">
+        
+        <div class="inner">
+            <div class="data-table">
+                <button class="add-databtn">Add data</button>
+                <div class="order-by">
+                    <button class="add-databtn name">OrderBy Name</button>
+                    <button class="add-databtn year">OrderBy Year</button>
+                </div>
+
+                <div class="data-added">Data Added Succesfully</div>
+
+                <div class="myform remove">
+                    <button class="addclose">X</button>
+                    <form action="#" id="addForm">
+                        <label>Name</label>
+                        <input type="text" name="name" placeholder="Name" autocomplete="off">
+                        <label>Year</label>
+                        <input type="text" name="year" placeholder="Year" autocomplete="off">
+                        
+                        <button type="submit" class="addSubmit">Submit</button>
+                    </form>
+                </div>
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>year</th>
+                            <th width="80px;">Action</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody class="datatr">
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCx-77tsbB4bslYGBOpSg-GaAvr2a5EXvc",
+            authDomain: "games-a997d.firebaseapp.com",
+            databaseURL: "https://games-a997d.firebaseio.com",
+            projectId: "games-a997d",
+            storageBucket: "games-a997d.appspot.com",
+            messagingSenderId: "889904186766"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
+
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
